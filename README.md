@@ -1,2 +1,2 @@
-#Run
+# Run
 docker compose up --scale api=2 

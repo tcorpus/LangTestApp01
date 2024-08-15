@@ -1,0 +1,19 @@
+services:
+  # nodejs app
+  api:
+    #container_name: nodejs_api
+    build: .
+    # ports: 
+    #   - 3000:3000
+  nginx:
+    image: nginx:latest
+    volumes:
+      - /c/nginx:/usr/share/nginx/html
+      - ./nginxconfig:/etc/nginx/conf.d
+    depends_on:
+      - api
+    ports:
+    - 3000:3000
+  
+
+
